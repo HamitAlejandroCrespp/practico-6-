@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void estacionAno() {
+    int dia, mes, ano;
+    cout << "Ingrese dia, mes y ano: ";
+    cin >> dia >> mes >> ano;
+
+    // Asumimos que los meses van del 1 al 12
+    if ((mes == 9 && dia >= 21) || mes == 10 || mes == 11 || (mes == 12 && dia < 21)) {
+        cout << "Es Primavera" << endl;
+    } else if ((mes == 12 && dia >= 21) || mes == 1 || mes == 2 || (mes == 3 && dia < 21)) {
+        cout << "Es Verano" << endl;
+    } else if ((mes == 3 && dia >= 21) || mes == 4 || mes == 5 || (mes == 6 && dia < 21)) {
+        cout << "Es Otono" << endl;
+    } else {
+        cout << "Es Invierno" << endl;
+    }
+}
+
+int main() {
+    estacionAno();
+    return 0;
+}
