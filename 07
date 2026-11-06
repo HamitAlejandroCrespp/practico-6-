@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+void sistemaEcuaciones() {
+    float a, b, c_val, d, e, f_val;
+    // aX + bY = c_val
+    // dX + eY = f_val  (nota: el enunciado usa d dos veces, asumo 'f' para el segundo resultado)
+    
+    cout << "Ingrese a, b, c para la primera ecuacion: ";
+    cin >> a >> b >> c_val;
+    cout << "Ingrese d, e, f para la segunda ecuacion: ";
+    cin >> d >> e >> f_val;
+
+    float determinante = (a * e) - (b * d);
+
+    if (determinante != 0) {
+        float x = ((c_val * e) - (b * f_val)) / determinante;
+        float y = ((a * f_val) - (c_val * d)) / determinante;
+        cout << "Solucion unica: X=" << x << " Y=" << y << endl;
+        cout << "Tipo de solucion: 1 (Unica)" << endl;
+    } else {
+        cout << "El sistema tiene multiples soluciones o no tiene solucion (determinante cero)." << endl;
+    }
+}
+
+int main() {
+    sistemaEcuaciones();
+    return 0;
+}
