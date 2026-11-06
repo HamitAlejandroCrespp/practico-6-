@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+void notasAlumnos() {
+    int continuar = 1;
+
+    while (continuar == 1) {
+        float parciales, practico, final_examen, notaFinal;
+        int faltas;
+
+        cout << "Ingrese nota de parciales (sobre 100): ";
+        cin >> parciales;
+        cout << "Ingrese nota de practico (sobre 100): ";
+        cin >> practico;
+        cout << "Ingrese nota de examen final (sobre 100): ";
+        cin >> final_examen;
+        cout << "Ingrese numero de faltas: ";
+        cin >> faltas;
+
+        // Si excede el 20% de 48 clases (9.6 -> 10 faltas), final = 0
+        if (faltas >= 10) {
+            final_examen = 0;
+            cout << "Examen final anulado por exceso de faltas." << endl;
+        }
+
+        notaFinal = (parciales * 0.40) + (practico * 0.20) + (final_examen * 0.40);
+
+        cout << "Promedio / Nota Final: " << notaFinal << endl;
+
+        if (notaFinal >= 51) {
+            cout << "Estado: APROBADO" << endl;
+        } else {
+            cout << "Estado: REPROBADO" << endl;
+        }
+
+        cout << "Desea calcular otro alumno? (1=Si, 0=No): ";
+        cin >> continuar;
+    }
+}
+
+int main() {
+    notasAlumnos();
+    return 0;
+}
