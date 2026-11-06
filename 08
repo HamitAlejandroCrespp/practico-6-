@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+void cuentaRestaurante() {
+    int q1, q2, q3, q4;
+    
+    cout << "Ingrese cantidad de Hamburguesas (3Bs): ";
+    cin >> q1;
+    cout << "Ingrese cantidad de Hamburguesas con queso (5Bs): ";
+    cin >> q2;
+    cout << "Ingrese cantidad de Papas fritas (2Bs): ";
+    cin >> q3;
+    cout << "Ingrese cantidad de Sodas (2.5Bs): ";
+    cin >> q4;
+
+    float t1 = q1 * 3.0;
+    float t2 = q2 * 5.0;
+    float t3 = q3 * 2.0;
+    float t4 = q4 * 2.5;
+    float total = t1 + t2 + t3 + t4;
+
+    cout << "\n--- FACTURA ---" << endl;
+    cout << "Hamburguesas: Bs " << t1 << endl;
+    cout << "Ham. con queso: Bs " << t2 << endl;
+    cout << "Papas fritas: Bs " << t3 << endl;
+    cout << "Sodas: Bs " << t4 << endl;
+    cout << "TOTAL A PAGAR: Bs " << total << endl;
+}
+
+int main() {
+    cuentaRestaurante();
+    return 0;
+}
