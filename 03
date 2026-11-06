@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void desglosarNumero() {
+    int numero;
+    cout << "Ingrese un numero menor a 10000: ";
+    cin >> numero;
+
+    if (numero >= 0 && numero < 10000) {
+        int m = numero / 1000;              // Unidades de mil
+        int c = (numero % 1000) / 100;      // Centenas
+        int d = (numero % 100) / 10;        // Decenas
+        int u = numero % 10;                // Unidades
+
+        cout << "Unidades de mil (m): " << m << endl;
+        cout << "Centenas (c): " << c << endl;
+        cout << "Decenas (d): " << d << endl;
+        cout << "Unidades (u): " << u << endl;
+    } else {
+        cout << "Error: El numero debe ser menor a 10000" << endl;
+    }
+}
+
+int main() {
+    desglosarNumero();
+    return 0;
+}
